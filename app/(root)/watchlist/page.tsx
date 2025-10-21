@@ -1,6 +1,7 @@
 import { auth } from "@/lib/better-auth/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { getWatchlistSymbolsByEmail } from "@/lib/actions/watchlist.actions";
 import { fetchJSON } from "@/lib/actions/finnhub.actions";
 import {
@@ -12,7 +13,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Star, Bell, Edit, Trash2 } from "lucide-react";
+import { Eye, Bell, Edit, Trash2 } from "lucide-react";
 
 interface Quote {
   c: number;
@@ -125,6 +126,7 @@ export default async function WatchlistPage() {
                 <TableHead className="w-[100px]">Change</TableHead>
                 <TableHead className="w-[120px]">Market Cap</TableHead>
                 <TableHead className="w-[100px]">P/E Ratio</TableHead>
+                <TableHead className="w-[100px]">View</TableHead>
                 <TableHead className="w-[100px]">Alert</TableHead>
               </TableRow>
             </TableHeader>
@@ -168,6 +170,11 @@ export default async function WatchlistPage() {
                     <TableCell className="py-3">{formattedChange}</TableCell>
                     <TableCell className="py-3">{formattedMarketCap}</TableCell>
                     <TableCell className="py-3">{formattedPERatio}</TableCell>
+                    <TableCell className="py-3">
+                      <Link href={`/stocks/${symbol}`}>
+                        <Eye />
+                      </Link>
+                    </TableCell>
                     <TableCell className="py-3">
                       <Button
                         variant="outline"
