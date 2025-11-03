@@ -41,10 +41,6 @@ Signalist provides a dynamic, real-time financial platform for both investors an
 👉 **Real-Time Workflows**: Powered by **Inngest**, automate event-driven processes like price updates, alert scheduling, and automated reporting.
 👉 **AI-Powered Summaries**: Generate personalized market summaries, daily digests, and earnings report notifications using the Gemini API.
 
-### Admin & Analytics
-
-👉 **Admin Dashboard**: A secure portal for managing stock data, publishing financial news, and monitoring user activity and engagement metrics.
-
 ## <a name="quick-start">🤸 Quick Start</a>
 
 Follow these steps to set up the project locally on your machine.
